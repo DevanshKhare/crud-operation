@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 interface Product {
-  _id?: string;
+  id?: string;
   name: string;
   description: string;
   price: number;

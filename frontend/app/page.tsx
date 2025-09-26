@@ -5,7 +5,7 @@ import { fetchProducts, createProduct, updateProduct, deleteProduct } from "../l
 import ProductForm from "../components/ProductForm";
 import ProductList from "../components/ProductList";
 interface Product {
-  _id?: string;
+  id?: string;
   name: string;
   description: string;
   price: number;
@@ -39,7 +39,7 @@ const page = () => {
         return;
       }
       if (editingProduct) {
-        await updateProduct(editingProduct._id!, product, token);
+        await updateProduct(editingProduct.id!, product, token);
         setEditingProduct(null);
       } else {
         await createProduct(product, token);

@@ -13,8 +13,9 @@ export default function LoginPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const res = await loginUser({ username, password });
-    if (res.token) {
-      login(res.token);
+    console.log(res);
+    if (res.access_token) {
+      login(res.access_token);
       router.push("/");
     }
   };

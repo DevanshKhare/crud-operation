@@ -1,7 +1,7 @@
 "use client";
 
 interface Product {
-  _id?: string;
+  id?: string;
   name: string;
   description: string;
   price: number;
@@ -19,7 +19,7 @@ export default function ProductList({ products, onEdit, onDelete }: Props) {
     <ul className="space-y-4">
       {products.map((p) => (
         <li
-          key={p._id}
+          key={p.id}
           className="p-4 border rounded flex justify-between items-center"
         >
           <div>
@@ -37,7 +37,7 @@ export default function ProductList({ products, onEdit, onDelete }: Props) {
               Edit
             </button>
             <button
-              onClick={() => onDelete(p._id!)}
+              onClick={() => onDelete(p.id!)}
               className="bg-red-500 text-white px-3 py-1 rounded cursor-pointer"
             >
               Delete

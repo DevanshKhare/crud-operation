@@ -4,7 +4,7 @@ export interface User {
 }
 
 export interface AuthResponse {
-  token: string;
+  access_token: string;
   user: {
     id: string;
     username: string;
@@ -30,8 +30,8 @@ export async function loginUser(user: User): Promise<AuthResponse> {
     body: JSON.stringify(user),
   });
   const data = await res.json();
-  if (data.token) {
-    localStorage.setItem("token", data.token);
+  if (data.access_token) {
+    localStorage.setItem("token", data.access_token);
   }
   return data;
 }
